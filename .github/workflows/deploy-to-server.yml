@@ -17,6 +17,9 @@ jobs:
       packages: write
 
     steps:
+      - name: downcase registry
+        run: |
+          echo "REPO=${REGISTRY,,}" >>${GITHUB_ENV}
       - name: Deploy to server
         uses: appleboy/ssh-action@master
         with:
@@ -27,4 +30,4 @@ jobs:
           script: | 
             docker stop portfolio -t 3
             docker rm portfolio
-            docker run --name portfolio -p 63000:3000 ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
+            docker run --name portfolio -p 63000:3000 ${{ env.REPO }}/${{ env.IMAGE_NAME }}
