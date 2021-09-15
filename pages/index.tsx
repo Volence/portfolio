@@ -1,14 +1,57 @@
-import Head from 'next/head'
+import Head from 'next/head';
 import Header from '../components/header/header';
+import Title from '../components/title/title';
 import Footer from '../components/footer/footer';
-import { motion } from "framer-motion"
+import { useState } from 'react';
+import Projects from './main/projects';
+import About from './main/about';
+
+const topLevelVariants = {
+  hidden: { y: -500},
+  visible: { y: 0 }
+}
+
+const contentVarients = {
+  hidden: { 
+    opacity: 0,
+    scaleY: 0,
+    display: 'none',
+    transition: {
+      type: "spring",
+      stiffness: 20,
+      bounce: .25,
+      restDelta: 2,
+      opacity: {
+        delay: 0
+      },
+      scaleY: {
+        duration: 0
+      }
+    }
+  },
+  visible: { 
+    opacity: 1,
+    scaleY: 1,
+    display: "flex",
+    transition: {
+      type: "spring",
+      stiffness: 20,
+      bounce: .25,
+      delay: .2,
+      duration: 4,
+      opacity: {
+        delay: 0,
+        duration: 1
+      },
+      scaleY: {
+        duration: 0
+      }
+    }
+  },
+}
 
 export default function Home() {
-
-  const topLevelVariants = {
-    hidden: { y: -500 },
-    visible: { y: 0 }
-  }
+  const [selection, setSelection] = useState('about');
 
   return (
     <div>
@@ -19,26 +62,13 @@ export default function Home() {
       </Head>
       <div className="container mx-auto flex flex-col justify-between min-h-screen">
 
-
-        <main className="h-full ">
-          <motion.div 
-            layout
-            className="shadow-lg rounded-lg" 
-            initial="hidden" 
-            animate="visible" 
-            variants={topLevelVariants} 
-            transition={{ duration: .5, stiffness: 60, type: "spring" }}
-          >
-            <Header />
-            <div className="bg-white w-full h-96 bg-center bg-no-repeat bg-cover rounded-t-none rounded-b-lg">
-              <div className="w-full h-full flex justify-center items-center">
-                  <div className="mx-4 text-center text-gray-700">
-                      <h1 className="font-bold text-6xl mb-4">Hi, I&apos;m Steve!</h1>
-                      <h2 className="font-bold text-3xl mb-12">I create software and websites!</h2>
-                  </div>
-              </div>
-            </div>
-          </motion.div>
+        <main className="h-full">
+          <Header setSelection={setSelection} topLevelVariants={topLevelVariants} />
+          <Title topLevelVariants={topLevelVariants}></Title>
+            <section>
+              <About selection={selection} contentVarients={contentVarients} />
+              <Projects selection={selection} contentVarients={contentVarients} />
+            </section>
         </main>
         
       </div>

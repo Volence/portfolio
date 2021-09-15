@@ -1,0 +1,29 @@
+name: Create and publish a Docker image
+
+on:
+  push:
+    branches: ['release']
+
+env:
+  REGISTRY: ghcr.io
+  IMAGE_NAME: ${{ github.repository }}
+
+jobs:
+  deploy-image-on-server:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+
+    steps:
+      - name: Deploy to server
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.KEY }}
+          port: ${{ secrets.PORT }}
+          script: | 
+            docker stop portfolio -t 3
+            docker rm portfolio
+            docker run --name portfolio -p 103000:3000 ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}

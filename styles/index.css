@@ -3,3 +3,8 @@
 body {
     @apply bg-indigo-100
 }
+
+
+.backdrop {
+    backdrop-filter: blur(5px);
+}
