@@ -30,4 +30,4 @@ jobs:
           script: | 
             docker stop portfolio -t 3
             docker rm portfolio
-            docker run --name portfolio -p 63000:3000 ${{ env.REGISTRY }}/${{ env.IMAGE }}
+            docker run --name portfolio -p 63000:3000 ${{ env.REGISTRY }}/${{ env.IMAGE }} -d

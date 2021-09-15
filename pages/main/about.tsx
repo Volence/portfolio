@@ -68,7 +68,7 @@ export default function About({selection, contentVarients}: ({selection: string,
 		<h3 className="text-xl mb-4 mt-6">What I currently do</h3>
 		<p className="paragraph">
 			Right now besides work most of the time when I&apos;m home I&apos;m studying something new, whether it&apos;s learning algorithms and data structures,
-			or trying to figure out Haskell. I&apos;m also very into classical music, I used to play piano when I was younger and recently started tracking
+			or trying to figure out Haskell. I&apos;m also very into classical music, I played piano when I was younger and recently started tracking
 			lessons again, so that&apos;s been a lot of fun. Most recently I&apos;ve been learning rust and have started work on a new project in it.
 		</p>
 	</motion.div>
