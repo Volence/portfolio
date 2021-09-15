@@ -4,4 +4,4 @@ COPY --chown=node:node . /app/
 WORKDIR /app
 RUN npm i
 RUN npm run build
-RUN npm run start
+ENTRYPOINT ["npm", "run", "start"]
