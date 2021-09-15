@@ -1,6 +1,6 @@
 FROM node:16-alpine3.13
 USER node
 COPY --chown=node:node . /app/
-RUN npm i
 WORKDIR /app
+RUN npm i
 RUN npm run start
