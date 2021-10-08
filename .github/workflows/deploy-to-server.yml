@@ -31,4 +31,4 @@ jobs:
             docker stop portfolio -t 3
             docker rm portfolio
             docker pull ${{ env.REGISTRY }}/${{ env.IMAGE }}:main
-            docker run -d --name portfolio -p 63000:3000 ${{ env.REGISTRY }}/${{ env.IMAGE }}:main
+            docker run -d --name portfolio -p 63000:3000 --restart always ${{ env.REGISTRY }}/${{ env.IMAGE }}:main
