@@ -19,7 +19,7 @@ export default function Projects({selection, contentVarients}: ({selection: stri
                   <div>
                     <Image width="900" height="500" src="/lighthouse_app.png" alt="image1" className="w-full h-48 object-cover mb-2" />
                     <p className="mb-3 tracking-wide text-base text-shadow">
-                      An application that takes three pages from a site (manually entered), then periodically runs Google's Lighthouse tool to get various metrics of the pages and save them in a MongoDB database, then displays this using charts on the frontend. Uses React, Victory, Material-UI, and Apollo on the frontend, and Express, Typescript, Graphql, Puppeteer, Lighthouse, and Passport on the backend.
+                      An application that takes three pages from a site (manually entered), then periodically runs Google&apos;s Lighthouse tool to get various metrics of the pages and save them in a MongoDB database, then displays this using charts on the frontend. Uses React, Victory, Material-UI, and Apollo on the frontend, and Express, Typescript, Graphql, Puppeteer, Lighthouse, and Passport on the backend.
                     </p>
                     <a href="https://github.com/Volence/lighthouse__app" target="_blank" className="backdrop bg-indigo-300 bg-opacity-0 border border-indigo-400 px-3 py-1.5 rounded focus:outline-none focus:ring-2 focus:ring-indigo-700 focus:ring-opacity-40 hover:bg-opacity-10 text-lg" rel="noreferrer">
                       Github Page
