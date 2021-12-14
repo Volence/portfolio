@@ -1,0 +1,17 @@
+{
+	"AWSEBDockerrunVersion": "1",
+	"Ports": [
+		{
+			"ContainerPort": 3000,
+			"HostPort": 80
+		},
+	   {
+			"ContainerPort": 3000,
+			"HostPort": 443
+	   }
+	],
+	"Image": {
+	   "Name": "ghcr.io/volence/portfolio:main",
+	   "Update": "true"
+	}
+  }

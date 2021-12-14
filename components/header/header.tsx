@@ -26,8 +26,8 @@ const Header = ({ setSelection, topLevelVariants }:
         <div className="hidden lg:flex lg:items-center lg:w-auto w-full" id="menu">
             <nav>
             <ul className="lg:flex items-center justify-between text-base text-gray-700 pt-4 lg:pt-0">
-                <li><a className="lg:p-4 py-3 px-0 block border-b-2 border-transparent hover:border-indigo-400" href="##" onClick={() => setSelection('about')}>About</a></li>
-                <li><a className="lg:p-4 py-3 px-0 block border-b-2 border-transparent hover:border-indigo-400" href="##" onClick={() => setSelection('projects')}>Projects</a></li>
+                <li><button className="lg:p-4 py-3 px-0 block border-b-2 border-transparent hover:border-indigo-400" onClick={() => setSelection('about')}>About</button></li>
+                <li><button className="lg:p-4 py-3 px-0 block border-b-2 border-transparent hover:border-indigo-400" onClick={() => setSelection('projects')}>Projects</button></li>
             </ul>
             </nav>
         </div>
