@@ -11,7 +11,8 @@ export default function Projects({selection, contentVarients}: ({selection: stri
                 animate={selection === 'projects' ? "visible" : "hidden"}
                 variants={contentVarients} 
               >
-                <h2 className="text-3xl text-center mb-4 w-full">Projects</h2>
+                <h2 className="text-3xl text-center mb-4 w-full">WIP</h2>
+                {/* <h2 className="text-3xl text-center mb-4 w-full">Projects</h2>
                 <div className="backdrop w-10/12 md:w-3/4 bg-white bg-opacity-10 rounded p-3 border border-indigo-400 shadow-lg">
                   <div className="w-full mb-3 pb-3 border-b border-1 border-indigo-400">
                     <h3 className="text-xl font-semibold text-shadow">Lighthouse App</h3>
@@ -39,6 +40,6 @@ export default function Projects({selection, contentVarients}: ({selection: stri
                       Github Page
                     </a>
                   </div>
-                </div>
+                </div> */}
               </motion.div>
 )}
